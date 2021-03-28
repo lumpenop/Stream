@@ -22,7 +22,7 @@
 .user_list > li{
     width: 80px;
     height: 60px; 
-    background: limegreen;
+    background: #9dac67;
     border: 1px solid #ececec;
     border-radius: 0 20px 20px 0;
     line-height: 60px;
@@ -104,7 +104,6 @@ li{
 }
 
 .user_con{
-    padding-bottom: 160px;
     height: 640px;
 }
 
@@ -116,4 +115,13 @@ li{
 .start{
     position: absolute;
     top: 80px;
+}
+
+.user_list:hover{
+    cursor: pointer;
+}
+
+.title{
+    margin-bottom: 30px;
+    padding-top: 30px;
 }

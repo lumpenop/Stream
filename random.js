@@ -19,7 +19,7 @@ num = 0;
 userChoiced = null;
 
 count = 1;
-selected = []
+userList = document.querySelectorAll('.user_list > li');
 addNum = (userLi) => {
     
     if (num != 0 && userLi.innerHTML == ''){
@@ -28,14 +28,26 @@ addNum = (userLi) => {
         userChoiced.style.display = "none";
         userChoiced.removeAttribute("class");
         count++;
+
+        if(count<=userList.length){
+            clickRandom()
+        }
+
+        if(count>userList.length){
+            document.querySelector('.start').removeAttribute('onclick');
+            score(); 
+        }
     }
+    
+    
 }
+
 
 
 clickRandom = () => {
     numberList = document.querySelectorAll('.before');
     rand = Math.random();
-    randInt = Math.floor(rand * numberList.length)
+    randInt = Math.floor(rand * numberList.length);
     if(num == 0){
         num = numberList[randInt].innerHTML;
         numberList[randInt].style.backgroundColor = 'blue';
@@ -43,6 +55,7 @@ clickRandom = () => {
     }
     
 }
+
 
 
 
