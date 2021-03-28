@@ -7,8 +7,8 @@ addNum = (i) => {
     number.push(i);
     li = document.createElement('li');
     li.innerHTML = i;
-    li.setAttribute("onclick","randomChoice(this)");
-    numberList.appendChild(li)
+    li.className = "before";
+    numberList.appendChild(li);
 }
 
 for(i=1; i<=30; i++){
@@ -23,6 +23,6 @@ for(i=1; i<=30; i++){
 number.push(i);
 li = document.createElement('li');
 li.innerHTML = "☆";
-li.setAttribute("onclick","randomChoice(this)");
-numberList.appendChild(li)
+li.className = "before";
+numberList.appendChild(li);
 
