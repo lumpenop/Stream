@@ -24,14 +24,10 @@ score = () => {
         }
 
         if (beforeNum <= afterNum){
-            if(stream == 0){
-                colorGroup.push(i);
-                colorGroup.push(i+1);
+         
+            colorGroup.push(i);
+            colorGroup.push(i+1);
                 
-            } else {
-                colorGroup.push(i+1);
-            }
-      
             stream++;
 
             if(i==userList.length-2){
@@ -39,9 +35,6 @@ score = () => {
             }
       
         } else {
-            total = total + scoreBoard[stream];
-            stream = 0;
-     
             for(j=0; j < colorGroup.length; j++){
                 userList[colorGroup[j]].style.backgroundColor = color[colorCount];
             }
@@ -52,6 +45,10 @@ score = () => {
             if(colorCount == color.length){
                 colorCount = 0;
             }
+            
+            total = total + scoreBoard[stream];
+            stream = 0;
+     
     }
     
     document.querySelector('.scoring').innerHTML = total;
