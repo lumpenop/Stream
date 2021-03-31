@@ -7,7 +7,12 @@
 .container{
     width: 1200px;
     margin: 0 auto;
-    background: #ececec;
+    background: #acacac;
+}
+
+.user_con img{
+    position: absolute;
+    left: 70%
 }
 
 .number_con{

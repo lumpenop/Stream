@@ -2,7 +2,7 @@
 scoreBoard = [0, 1, 3, 5, 7, 12, 11, 15, 20, 25,
     30, 55, 40, 50, 60, 70, 135, 100, 150, 300]
 
-color = ['blue','lightpurple','gray','black','green','red']
+col = ['blue','purple','gray','black','green','red'];
 colorCount = 0;
 stream = 0;
 total = 0;
@@ -17,11 +17,10 @@ score = () => {
         afterNum = parseInt(userList[i+1].innerHTML);
         
         if (i > 0 && userList[i].innerHTML == '☆'){
-            beforeNum = userList[i-1];
-        }
-        if (i > 0 && userList[i+1].innerHTML == '☆'){
+            beforeNum = parseInt(userList[i-1].innerHTML);
+        } else if (userList[i+1].innerHTML == '☆'){
             afterNum = beforeNum;
-        }
+        } 
 
         if (beforeNum <= afterNum){
          
@@ -35,20 +34,24 @@ score = () => {
             }
       
         } else {
+        
             for(j=0; j < colorGroup.length; j++){
-                userList[colorGroup[j]].style.backgroundColor = color[colorCount];
+                userList[colorGroup[j]].style.background = col[colorCount];
             }
 
             colorCount++;
             colorGroup = [];
 
-            if(colorCount == color.length){
+            if(colorCount == col.length){
                 colorCount = 0;
             }
             
             total = total + scoreBoard[stream];
             stream = 0;
      
+    }
+    for(j=0; j < colorGroup.length; j++){
+        userList[colorGroup[j]].style.background = col[colorCount];
     }
     
     document.querySelector('.scoring').innerHTML = total;
